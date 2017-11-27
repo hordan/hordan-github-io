@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<title>Search</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<script src="dots.js"></script>
+    <script type="text/javascript">
+		function showHide(element_id,element_id2) {
+			if (document.getElementById(element_id)) {
+				var obj = document.getElementById(element_id); 
+				var obj2 = document.getElementById(element_id2); 
+				if (obj.style.display == "flex"){
+					obj.style.display = "none";
+					obj2.style.display = "flex";
+					}
+			   else{
+				   obj2.style.display = "none";
+				   obj.style.display = "flex";
+			   }
+			}
+		}
+        </script>
+  <div id ="search">
+  <form id="search"  method="get" >
+  <input id="query" 
+  		 type="text"
+  		 size="40" 
+  		 value='cats'
+  		 placeholder="Search..." 
+  		 onkeypress ="handle(event)"
+  		 />
+</form>
+  	</div>
+   	<div id="main" style="display: flex;"></div>
+   	<div id="main2"></div>
+	<div id= "cartnav">
+		 <a href="#" onclick="showHide('main','main2')" class="button orange">CHANGE RESULTS</a>
+ 	</div>  
+    <script src="https://apis.google.com/js/api.js"></script>
+  	<script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+    <script src="search.js" ></script>
+   	<script src="auth.js"></script>
+  </body>
+</html>
+
